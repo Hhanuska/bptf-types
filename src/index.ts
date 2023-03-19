@@ -308,6 +308,9 @@ export function isInputOutputAttribute(
 
 export interface SnapshotResponse {
   listings: SnapshotListing[];
+  appid: number;
+  sku: string;
+  createdAt: number;
 }
 
 export interface SnapshotListing {
