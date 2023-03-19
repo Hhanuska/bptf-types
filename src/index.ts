@@ -305,3 +305,22 @@ export function isInputOutputAttribute(
 ): attr is InputOutputAttribute {
   return Object.hasOwnProperty.call(attr, "is_output");
 }
+
+export interface SnapshotResponse {
+  listings: SnapshotListing[];
+}
+
+export interface SnapshotListing {
+  steamid: string;
+  offers: 0 | 1;
+  butout: 0 | 1;
+  details: string;
+  intent: Intent;
+  timestamp: number;
+  price: number;
+  item: ApiItem;
+  currencies: Partial<Currencies>;
+  bump: number;
+}
+
+export type Intent = "buy" | "sell";
