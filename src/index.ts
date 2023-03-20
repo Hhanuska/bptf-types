@@ -316,7 +316,7 @@ export interface SnapshotResponse {
 export interface SnapshotListing {
   steamid: string;
   offers: 0 | 1;
-  butout: 0 | 1;
+  buyout: 0 | 1;
   details: string;
   intent: Intent;
   timestamp: number;
