@@ -13,7 +13,7 @@ export interface Listing {
   id: string;
   steamid: string;
   appid: number;
-  currencies: Partial<Currencies>;
+  currencies: Partial<Currencies> | CurrenciesCrosslist;
   value: Value;
   tradeOffersPreferred?: boolean;
   buyoutOnly?: boolean;
@@ -82,6 +82,10 @@ export interface Item {
 export interface Currencies {
   keys: number;
   metal: number;
+}
+
+export interface CurrenciesCrosslist {
+  usd: number;
 }
 
 export interface Value {
@@ -322,7 +326,7 @@ export interface SnapshotListing {
   timestamp: number;
   price: number;
   item: ApiItem;
-  currencies: Partial<Currencies>;
+  currencies: Partial<Currencies> | CurrenciesCrosslist;
   bump: number;
 }
 
