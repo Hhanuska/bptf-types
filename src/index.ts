@@ -88,6 +88,12 @@ export interface CurrenciesCrosslist {
   usd: number;
 }
 
+export function isCrosslistCurrencies(
+  curr: Partial<Currencies> | CurrenciesCrosslist
+): curr is CurrenciesCrosslist {
+  return Object.hasOwnProperty.call(curr, "usd");
+}
+
 export interface Value {
   /**
    * Raw value in refined metal
