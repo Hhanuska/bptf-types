@@ -329,7 +329,9 @@ export interface SnapshotListing {
   buyout: 0 | 1;
   details: string;
   intent: Intent;
+  /** Timestamp in seconds */
   timestamp: number;
+  /** Price in refined metal, using average key price if range (eg. 56.77-56.88 --> 56.825) */
   price: number;
   item: ApiItem;
   currencies: Partial<Currencies> | CurrenciesCrosslist;
