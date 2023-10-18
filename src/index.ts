@@ -336,6 +336,7 @@ export interface SnapshotListing {
   item: ApiItem;
   currencies: Partial<Currencies> | CurrenciesCrosslist;
   bump: number;
+  userAgent?: UserAgent;
 }
 
 export type Intent = "buy" | "sell";
