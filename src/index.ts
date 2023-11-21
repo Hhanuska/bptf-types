@@ -64,19 +64,40 @@ export interface Item {
   class?: string[];
   slot?: "misc" | "taunt" | "primary" | "secondary" | "melee";
   killEaters?: KillEater[];
+  australium?: boolean;
   particle?: Particle;
   crateSeries?: number;
   spells?: Spell[];
   tradable: boolean;
   craftable: boolean;
   craftedBy: CraftedBy;
+  giftedBy: GiftedBy;
   /**
    * For unu effects, effect id (number) as a string
    */
   priceindex?: string;
   paint?: Paint;
   paintSecondaryHex?: string;
-  tag?: null | string;
+  tag?: null | Tag;
+  texture?: Texture;
+  wearTier?: WearTier;
+  /** TODO */
+  recipe?: any;
+  /** TODO */
+  style?: any;
+  customName?: string;
+  customDesc?: string;
+  equipped?: Equipped[];
+  tradableAfter?: number;
+  festivized?: boolean;
+  rarity: Rarity;
+  marketplaceTfListing?: MarketplaceTfListing;
+  dupe?: boolean;
+  decal: Decal;
+  quantity?: number;
+  attributes?: Attribute2;
+  medalNumber?: number;
+  containedItem?: Item;
 }
 
 export interface Currencies {
@@ -171,6 +192,8 @@ export interface Quality {
 
 export type Paint = Quality;
 
+export type Rarity = Quality;
+
 export interface Particle {
   id: number;
   name: string;
@@ -237,6 +260,8 @@ export interface CraftedBy {
   steamid: string;
 }
 
+type GiftedBy = CraftedBy;
+
 export interface Deal {
   percent: number;
   value: number;
@@ -267,6 +292,44 @@ export interface Spell {
 export interface KillstreakDetails {
   id: number;
   name: string;
+}
+
+export interface Texture {
+  id: number;
+  itemDefindex: number;
+  rarity: Quality;
+  name: string;
+}
+
+export interface WearTier {
+  id: number;
+  name: string;
+  short: string;
+}
+
+export interface Tag {
+  id: string;
+  steamId: string;
+  itemId: number;
+  color: string;
+  text: string;
+}
+
+export interface MarketplaceTfListing {
+  value: number;
+  raw: number;
+  short: string;
+  currency: string;
+}
+
+export interface Decal {
+  url: string;
+}
+
+// https://gist.github.com/joekiller/9045906cd4419fab5f50e1f8775b050b
+export interface Attribute2 {
+  field: string;
+  value: number | string;
 }
 
 export interface ApiItem {
