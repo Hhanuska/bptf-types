@@ -316,10 +316,13 @@ export interface Tag {
 }
 
 export interface MarketplaceTfListing {
+  /** Price in USD eg: 1.99 */
   value: number;
+  /** Price in refined */
   raw: number;
+  /** eg: 2.35 keys */
   short: string;
-  currency: string;
+  currency: "usd";
 }
 
 export interface Decal {
