@@ -1,10 +1,10 @@
-export interface Message {
+export interface WsMessage {
   id: string;
   event: "listing-update" | "listing-delete";
-  payload: Listing;
+  payload: WsListing;
 }
 
-export interface Listing {
+export interface WsListing {
   /**
    * Pattern of appid_assetid for sell orders
    * appid_steamid64_md5(full item name)
@@ -26,14 +26,14 @@ export interface Listing {
   count: number;
   status: "active" | "archived";
   source: "userAgent" | "marketplaceTf" | "steam";
-  item: Item;
+  item: WsItem;
   userAgent: UserAgent;
   user: User;
   promoted?: boolean;
   deal?: Deal;
 }
 
-export interface Item {
+export interface WsItem {
   appid: number;
   baseName: string;
   defindex: number;
@@ -97,7 +97,7 @@ export interface Item {
   quantity?: number;
   attributes?: Attribute2;
   medalNumber?: number;
-  containedItem?: Item;
+  containedItem?: WsItem;
 }
 
 export interface Currencies {
@@ -251,7 +251,7 @@ export interface StrangePart {
     /**
      * Item object of the applied strange part
      */
-    item: Item;
+    item: WsItem;
   };
 }
 
