@@ -276,7 +276,7 @@ export interface Spell {
    * eg: "Die Job", "Headless Horseshoes"
    */
   name: string;
-  type: "paint" | "footsteps" | string;
+  type: "paint" | "footsteps" | "weapon";
   /**
    * Defindex of the unapplied spell
    */
