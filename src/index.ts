@@ -25,7 +25,7 @@ export interface Listing {
   intent: "buy" | "sell";
   count: number;
   status: "active" | "archived";
-  source: "userAgent" | "marketplaceTf";
+  source: "userAgent" | "marketplaceTf" | "steam";
   item: Item;
   userAgent: UserAgent;
   user: User;
