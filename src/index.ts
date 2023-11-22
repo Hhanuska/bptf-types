@@ -363,7 +363,7 @@ export interface Equipped {
 
 export interface Attribute {
   defindex: number;
-  value: number | string;
+  value?: number | string;
   float_value?: number;
 }
 
