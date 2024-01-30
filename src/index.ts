@@ -354,6 +354,11 @@ export interface ApiItem {
   equipped?: Equipped[];
   style: number;
   attributes?: Attribute[];
+  // mptf
+  marketplace_price?: number;
+  marketplace_bot_steamid?: string | null;
+  marketplace_sku?: string;
+  marketplace_image?: string;
 }
 
 export interface Equipped {
